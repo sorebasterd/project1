@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="mikem"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2018-09-17 06:46:17 PM"/>
+        <attribute name="created" value="bWlrZW07REVTS1RPUC1ETkJBOVBSOzIwMTgtMDktMDM7MTA6NDk6NTYgUE07MjkwMg=="/>
+        <attribute name="edited" value="bWlrZW07REVTS1RPUC1ETkJBOVBSOzIwMTgtMDktMTc7MDY6Mjk6MTMgUE07MjttaWtlbTtERVNLVE9QLUROQkE5UFI7MjAxOC0wOS0wMzsxMDo0OTo1NiBQTTtBY3Rpdml0eSAzLmZwcmc7NzQzNw=="/>
+        <attribute name="edited" value="bWlrZW07REVTS1RPUC1ETkJBOVBSOzIwMTgtMDktMTc7MDY6NDY6MTcgUE07NzszMDIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="A program that calculates your gross wage using a functions - flowgorithm"/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="wage" type="Integer" array="False" size=""/>
+            <assign variable="hours" expression="EnterHours()"/>
+            <assign variable="rate" expression="EnterRate(hours)"/>
+            <call expression="DisplayResult(wage)"/>
+        </body>
+    </function>
+    <function name="DisplayResult" type="None" variable="">
+        <parameters>
+            <parameter name="wage" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;The employee's gross wage is: $&quot;&amp;wage" newline="True"/>
+        </body>
+    </function>
+    <function name="EnterHours" type="Real" variable="hours">
+        <parameters>
+            <parameter name="hours" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Please enter the total number of hours worked.&quot;" newline="True"/>
+            <input variable="hours"/>
+        </body>
+    </function>
+    <function name="EnterRate" type="Real" variable="rate">
+        <parameters>
+            <parameter name="hours" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the employee's hourly payrate.&quot;" newline="True"/>
+            <input variable="rate"/>
+            <assign variable="wage" expression="(hours * rate)"/>
+        </body>
+    </function>
+</flowgorithm>

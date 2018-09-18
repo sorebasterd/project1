@@ -1,0 +1,31 @@
+Module main()
+    // A program that calculates your gross wage using a functions - flowgorithm
+    Declare Real hours
+    Declare Real rate
+    Declare Integer wage
+    
+    Set hours = enterHours()
+    Set rate = enterRate(hours)
+    Call displayResult (wage)
+End Module
+
+Module displayResult (Real wage)
+    Display "The employee's gross wage is: $", wage
+End Module
+
+Function Real enterHours (Real hours)
+    Display "Please enter the total number of hours worked."
+    Input hours
+    
+    Return hours
+End Function
+
+Function Real enterRate (Real hours)
+    Declare Real rate
+    
+    Display "Enter the employee's hourly payrate."
+    Input rate
+    Set wage = hours * rate
+    
+    Return rate
+End Function
